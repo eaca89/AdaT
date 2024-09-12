@@ -7,16 +7,12 @@ import shutil
 from videoscene import VideoScene
 
 
-ANIMATION_FOLDER = 'Rico/animations'
-GESTURE_FOLDER = 'Rico/filtered_traces'
+ANIMATION_FOLDER = '/media/data/eh_abdol/Rico/animations'
+GESTURE_FOLDER = '/media/data/eh_abdol/Rico/filtered_traces'
 STABLE_DURATION = 1
 STALE_THRESHOLD = 0.99
 NUM_UNSTABLE = 3
-OUTPUT_DIR = './dataset'
-
-
-
-
+OUTPUT_DIR = '/media/data/eh_abdol/dataset'
 
 
 def split_dataset(OUTPUT_STABLE_DIR, OUTPUT_UNSTABLE_DIR, OUTPUT_DIR):
