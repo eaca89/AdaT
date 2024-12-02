@@ -11,10 +11,6 @@ import glob
 import tqdm
 import json
 
-
-
-
-
 np.random.seed(42)
 
 class VideoScene:
@@ -49,6 +45,8 @@ class VideoScene:
             self.shots = self.detect_shots()
     
     def get_gesture(self):
+        if self.GESTURE_FOLDER is None:
+            return []
         gesture_file = os.path.join(self.GESTURE_FOLDER, f'{self.app}/{self.trace_no}/gestures.json')
         if not os.path.exists(gesture_file):
             return []

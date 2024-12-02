@@ -7,12 +7,12 @@ import shutil
 from videoscene import VideoScene
 
 
-ANIMATION_FOLDER = '/media/data/eh_abdol/Rico/animations'
+ANIMATION_FOLDER = '/media/data/eh_abdol/Rico/animation'
 GESTURE_FOLDER = '/media/data/eh_abdol/Rico/filtered_traces'
 STABLE_DURATION = 1
 STALE_THRESHOLD = 0.99
 NUM_UNSTABLE = 3
-OUTPUT_DIR = '/media/data/eh_abdol/dataset'
+OUTPUT_DIR = '/media/data/eh_abdol/Rico'
 
 
 def split_dataset(OUTPUT_STABLE_DIR, OUTPUT_UNSTABLE_DIR, OUTPUT_DIR):
@@ -101,7 +101,7 @@ def main():
 
     for gif in tqdm.tqdm(glob.glob(os.path.join(ANIMATION_FOLDER, '*/*/gifs/*.gif'))):
         vs = VideoScene(gif, STABLE_DURATION, STALE_THRESHOLD, NUM_UNSTABLE,
-                            GESTURE_FOLDER, OUTPUT_STABLE_DIR, OUTPUT_UNSTABLE_DIR)
+                             GESTURE_FOLDER, OUTPUT_STABLE_DIR, OUTPUT_UNSTABLE_DIR)
         vs.write_dataset()
         
 
@@ -112,7 +112,7 @@ def main():
     '''
         Split in training, validation, testing dataset
     '''
-    split_dataset(OUTPUT_STABLE_DIR, OUTPUT_UNSTABLE_DIR, OUTPUT_DIR)
+    # split_dataset(OUTPUT_STABLE_DIR, OUTPUT_UNSTABLE_DIR, OUTPUT_DIR)
 
 
 
